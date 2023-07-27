@@ -23,6 +23,6 @@ urlpatterns = [
     # path('home',views.home)
     path('', include('home.urls')),
     path('smart/', include('notes.urls'))
-    #all the urls added on nodes.urls will be added after 
+    #all the urls added on notes.urls will be added after 
     #the smart/ part of the endpoint
 ]
