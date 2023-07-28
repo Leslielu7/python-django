@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <style>
+            h1 { color: #FF0000; }
+        </style>
+    </head>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>

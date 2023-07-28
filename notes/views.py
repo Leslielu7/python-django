@@ -15,4 +15,5 @@ class NotesListView(ListView):
 class NotesDetailView(DetailView):
     model = Notes
     context_object_name = "note"
+    
 
