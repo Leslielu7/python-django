@@ -1,8 +1,24 @@
-<html>
-    <h1>These are the nodes:</h1>
-    <ul>
-        {% for note in notes %}
-            <li>{{note.title}}</li>
-        {% endfor %}
-    </ul>
-</html>
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1 class="my-5">These are the nodes:</h1>
+
+        <div class="row row-cols3 g-2"> 
+            <!-- row-cols3: sets the number of columns to 3, display three notes per row -->
+            <!-- g-2:  adds a horizontal gap of 2 units between each column -->
+            {% for note in notes %}
+            <div class="col">
+                <div class="p-3 border">
+                    <!-- a div with padding on all sides of 3 units, indicated by the p-3 class.
+                    The border class adds a border around the div. -->
+                    <a href="{% url 'notes.detail' pk=note.id %}" class="text-dark text-decoration-non"> 
+                        <h3>{{note.title}}</h3>
+                    </a>
+                    {{note.text|truncatechars:10}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+   
+{% endblock %}
